@@ -72,20 +72,28 @@ def index(request):
                 return render(request, "HTML/index.html",{'products':products})
             
         else:
-            id = request.POST.get('id')    
-            obj_id = Product.objects.get(id=id)
-            cart = request.session.get('cart')
-            if cart:
-                quantity = cart.get(id)
-                if quantity:
-                    cart[id]= quantity+1
-                else: 
+            try:
+                id = request.POST.get('id')    
+                obj_id = Product.objects.get(id=id)
+                cart = request.session.get('cart')
+                if cart:
+                    quantity = cart.get(id)
+                    if quantity:
+                        cart[id]= quantity+1
+                    else: 
+                        cart[id] = 1
+                else:
+                    cart={}
                     cart[id] = 1
-            else:
-                cart={}
-                cart[id] = 1
-            request.session['cart'] = cart
-            return redirect('index')
+                request.session['cart'] = cart
+                return redirect('index')
+            except:
+                category = request.POST.get('submit')
+                
+                if category =="All Products":
+                    return redirect('index')
+                products = Product.objects.filter(category=category)
+                return render(request, "HTML/index.html",{'products':products})
 
             
     else:
