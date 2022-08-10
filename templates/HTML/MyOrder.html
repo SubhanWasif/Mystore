@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Orders</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/Myorders.css' %}">
+    {% load tem_tags %}
+</head>
+<body>
+    <div class="nav-bar">
+
+        <div class="title">
+            <a href="{% url 'index' %}">Simple-Store</a>
+        </div>
+        <div class="cart">
+            <a href="{% url 'cart' %}">Cart</a>
+        </div>
+        <div class="orders">
+            <a href="{% url 'orders' %}">Orders</a>
+        </div>
+        <div class="profile">
+           <a href="{% url 'logout' %}"> Logout</a>
+        </div>
+    </div>
+
+<div class="completedorders">
+    <center><div class="order-title">
+        Orders Completed
+    </div>
+</center>
+</div>
+{% if orders %}
+<div class="orders-box">
+    <div class="details">       
+                <div class="numbering font">
+                    No.
+                </div>     
+                <div class="transactionID font">
+                    Order
+                </div> 
+                <div class="time font">
+                    Date
+                </div>
+                <div class="Fulfillment-Status font">
+                    Fulfillment Status
+                </div>
+                <div class="total font">
+                    Total
+                </div>
+    </div>
+    <ol>
+        {% for order in orders %}
+    <div class="details">       
+        <div class="numbering ">
+            <li></li>
+        </div>     
+        <div class="transactionID">
+            <a href="{% url 'order_details' order.transactionID %}">{{ order.transactionID }}</a>
+        </div> 
+        <div class="time">
+            {{ order.date_ordered }}
+            
+        </div>
+        <div class="Fulfillment-Status">
+            {% if order.complete %}
+              Completed
+            {% else %}
+              Pending
+            {% endif %}
+        </div>
+        <div class="total">
+            ${{ order|all_total }}
+        </div>
+    </div>
+{% endfor %}
+
+    </ol>
+</div>   
+
+
+{% else %}
+
+
+<center>
+    <div class="empty-cart-box">
+      <div class="empty-cart">
+        You Have Not Ordered Anything Yet<br>
+        <small>Go Back And Get Yourself Something!!</small>
+        <br>
+        <a href="{% url 'index' %}">Simple-Store</a>
+      </div>
+    </div>
+    
+    </center>
+{% endif %}
+
+
+</body>
+</html>

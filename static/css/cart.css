@@ -1,0 +1,317 @@
+
+
+
+body{
+
+    margin: 0px;
+    padding: 0px;
+    background-color: rgba(99, 92, 194, 0.466);
+
+
+
+}
+
+.nav-bar{
+    background-color: rgba(206, 110, 110, 0.733);
+    color: rgb(117, 114, 114);
+    height: 70px;
+    width: 100%;
+    display: inline-flex;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 500;
+}
+
+.title{
+    font-size: 30px;
+    padding-top: 16px;
+    padding-left: 100px;
+}
+
+
+.cart{
+    font-size: 20px;
+    padding-top: 20px;
+    margin-left: 55%;
+    opacity: 1; 
+    
+
+}
+
+
+.orders , .profile{
+    font-size: 20px;
+    padding-top: 20px;
+    margin-left: 20px; 
+    opacity: 1; 
+
+}
+
+
+
+.nav-bar a{
+    text-decoration: none;
+    text-decoration-line: none;
+    color: rgb(117, 114, 114);
+
+}
+
+.nav-bar a:hover{
+ 
+        color: black;
+        cursor: pointer;
+
+}
+
+
+
+
+.cart-title{
+    margin-top: 50px;
+     text-align: center;
+    font-size: 45px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+}
+
+
+.inline {
+    display: inline-flex;
+    font-size: 20px;
+    margin-top: 0px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    
+
+}
+
+.box{
+    border-style: solid;
+    border-radius: 10px;
+    border-width: 0px;
+    width: 90%;
+    margin-left: 70px;
+    margin-top: 50px;
+    background-color: rgba(255, 255, 255, 0.795);
+    padding-right: 30px;
+
+
+}
+
+
+
+
+ ol .inline{
+    font-size: 20px;
+    margin-top: 0px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    margin-left: -40px;
+
+}
+
+
+.inline .numbering{
+    height: 40px;
+    width: 100px;
+    margin-left: 50px;
+
+    text-align: center;
+    
+}
+
+.inline .Title{
+    height: 40px;
+    width: 400px;
+    margin-left: 20px;
+
+    
+
+
+
+}
+.inline .price{
+    height: 40px;
+    width: 100px;
+    margin-left: 120px;
+
+    
+
+
+}
+.inline  .quantity{
+    display: inline-flex;
+    height: 40px;
+    width: 100px;
+    margin-left: 120px;
+
+    
+
+
+
+}
+.inline  .total{
+    height: 40px;
+    width: 100px;
+    margin-left: 120px;
+
+    
+
+
+
+}
+
+
+.big-fonts{
+    margin-top: 40px;
+    font-size: 30px;
+}
+
+
+
+
+
+  ol li{
+    margin-left:50px ;
+  }
+
+
+
+
+.inline-shipping-checkout{
+    display: inline-flex;
+    font-size: 20px;
+    width: 100%;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    
+
+}
+
+
+.total-checkout{
+    background-color: white;
+    padding: 30px;
+    width: 200px;
+    text-align: center;
+    border-radius: 10px;
+    margin-left: 52%;
+    margin-bottom: 20px;
+
+
+
+}
+
+
+
+.total-checkout .all_total{
+    margin-bottom: 30px;
+
+}
+
+
+.total-checkout .checkout a{
+    font-size: 25px; 
+    background-color: rgba(195, 217, 236, 0.658);
+    border: none;
+    border-radius: 40px;
+    text-decoration: none;
+    padding: 16px 32px;
+    cursor: pointer;
+    text-decoration: none;
+    color: black;
+
+}
+
+
+
+.total-checkout .checkout a:hover{
+    opacity: 0.5;
+    color:black
+
+}
+.total-checkout .checkout a:visited{
+    color: black;
+}
+
+
+
+
+.shopping{
+    background-color: white;
+    padding: 30px;
+    margin-left: 70px;
+    width: 200px;
+    height: 20px;
+    text-align: center;
+    border-radius: 10px;
+}
+
+
+.inline .quantity input[name="submit"] {
+
+    font-size: 20px;
+position: relative;
+left: 20px;
+border-style: none;
+border-radius: 100%;
+background-color: rgba(99, 92, 194, 0.192);
+cursor: pointer;
+
+}
+
+
+.inline-shipping-checkout  a{
+    border: none;
+    border-radius: 40px;
+    text-decoration: none; 
+    cursor: pointer;
+    color: black;
+}
+
+
+
+.total-checkout .checkout a:hover{
+    opacity: 0.5;
+    color:black
+
+}
+.total-checkout .checkout a:visited{
+    color: black;
+}
+
+
+
+
+.inline-shipping-checkout  a:hover{
+    opacity: 0.5;
+    color:black
+}
+
+
+.empty-cart-box{
+
+    display: inline-block;
+    background-color: rgba(255, 255, 255, 0.795);
+    border-radius: 20px;
+    border-style: none;
+    padding: 70px;
+    margin-top: 30px;
+    line-height: 50px;
+
+
+
+}
+
+.empty-cart-box .empty-cart{
+    font-size: 30px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
+}
+
+.empty-cart-box .empty-cart small{
+    font-size: 20px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+
+}
+
+.empty-cart-box .empty-cart a{
+    color: black;
+
+}

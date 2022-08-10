@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="stylesforcart.css">
+    <title>Cart</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/cart.css' %}">
+{% load tem_tags %}
+
+</head>
+<body>
+
+
+
+
+{% if user.is_authenticated %}
+
+    <div class="nav-bar">
+
+        <div class="title">
+            <a href="{% url 'index' %}">Simple-Store</a>
+        </div>
+        <div class="cart">
+            <a href="#">Cart</a>
+        </div>
+        <div class="orders">
+            <a href="{% url 'orders' %}">Orders</a>
+        </div>
+        <div class="profile">
+           <a href="{% url 'logout' %}"> Logout</a>
+        </div>
+    </div>
+
+{% else %}
+
+    <div class="nav-bar">
+        <div class="title">
+            <a href="{% url 'index' %}">Simple-Store</a>
+        </div>
+        <div class="cart">
+            <a href="{% url 'login' %}">Login</a>
+        </div>
+        <div class="orders">
+            <a href="{% url 'signup' %}">Sigup</a>
+        </div>
+    </div>   
+
+{% endif %}
+
+
+
+
+    <div class="cart-title">
+        CART ITEMS
+    </div>
+  {% if items %}   
+
+
+    <div class="box">
+    
+    <div class="inline">
+        <div class="numbering big-fonts">
+            No.
+        </div>
+        <div class="Title big-fonts">
+            Name
+        </div>
+        <div class="price big-fonts">
+            Price
+        </div>
+        <div class="quantity big-fonts">
+            Quantity
+        </div>
+        <div class="total big-fonts">
+            Total
+        </div>
+    </div>
+
+
+        <ol>
+
+    {% if user.is_authenticated %}
+
+    {% for item in  items %}
+          
+    
+    <div class="inline">
+    
+
+        <div class="numbering">
+            <li></li>
+            
+        </div>
+        <div class="Title">
+            {{item.product.title}}({{item.product.category}})
+
+        </div>
+        <div class="price">
+            ${{item.product.price}}
+        </div>
+        <div class="quantity">
+            {{item.quantity}}
+            <form method="POST">
+              {% csrf_token %}
+            <input hidden type="text" value= "{{item.id}}" name="id" > 
+            <input type="submit" name="submit"  value="⇑"> 
+            <input type="submit" name="submit" value="⇓"> 
+            </form>
+        
+        </div>
+        <div class="total">
+
+            ${{item.quantity|total_price:item.product.price}}
+        </div>
+    </div>
+    {% endfor %}
+    {% else %}
+
+    {% for item in  items %}
+
+
+    {% if item|product_obj:request.session.cart%}
+
+    <div class="inline">
+    
+
+        <div class="numbering">
+            <li></li>
+            
+        </div>
+        <div class="Title">
+            {{item.title}}({{item.category}})
+
+        </div>
+        <div class="price">
+            ${{item.price}}
+        </div>
+        <div class="quantity">
+            {{item|return_quantity:request.session.cart}}
+            
+            <form method="POST">
+              {% csrf_token %}
+            <input hidden type="text" value= "{{item.id}}" name="id" > 
+            <input type="submit" name="submit"  value="⇑"> 
+            <input type="submit" name="submit" value="⇓"> 
+            </form>
+        
+        </div>
+        <div class="total">
+            {% if item|total_price:request.session.cart %}
+                ${{item|total_price:request.session.cart}}
+            {% endif %}
+        </div>
+    </div>
+    {% endif %}
+    {% endfor %}
+
+
+
+
+    {% endif %}
+    
+
+
+
+  </ol>
+
+    </div>
+
+        
+
+
+
+<div class="inline-shipping-checkout">
+    <a href="{% url 'index' %}">
+    <div class="shopping">
+    Continue Shopping
+    </div>
+</a>
+
+{% if user.is_authenticated %}
+<div class="total-checkout">
+    <div class="all_total">
+        Total: ${{total}}   
+    </div>
+    
+    <div class="checkout">
+        <a href="{% url 'checkout' %}">CheckOut</a>
+        
+    </div>
+    {% else %}
+    <div class="total-checkout">
+    <div class="all_total">
+            {% if items|all_total:request.session.cart %}
+        Total:   ${{items|all_total:request.session.cart}}
+                {% endif %}
+    </div>
+    
+    <div class="checkout">
+        <a href="{% url 'login' %}">CheckOut</a>
+        
+    </div>
+    {% endif %}
+</div>
+</div>
+    
+
+
+
+{% else %}
+<center>
+<div class="empty-cart-box">
+  <div class="empty-cart">
+    There is nothing in your cart<br>
+    <small>Go Back And Get Yourself Something!!</small>
+    <br>
+    <a href="{% url 'index' %}">Simple-Store</a>
+  </div>
+</div>
+
+</center>
+    
+{% endif %}
+
+
+
+
+
+
+
+
+    
+</body>
+</html>

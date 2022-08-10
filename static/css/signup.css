@@ -1,0 +1,126 @@
+
+
+
+
+body{
+    margin: 0px;
+    padding: 0px;
+    background-color: rgba(99, 92, 194, 0.466);
+}
+
+
+
+.nav-bar{
+    background-color: rgba(206, 110, 110, 0.733);
+    color: rgb(117, 114, 114);
+    height: 70px;
+    width: 100%;
+    display: inline-flex;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 500;
+}
+
+.title{
+    font-size: 30px;
+    padding-top: 16px;
+    padding-left: 100px;
+}
+
+
+.cart{
+    font-size: 20px;
+    padding-top: 20px;
+    margin-left: 55%;
+    opacity: 1; 
+    
+
+}
+
+
+.orders , .profile{
+    font-size: 20px;
+    padding-top: 20px;
+    margin-left: 20px; 
+    opacity: 1; 
+
+}
+
+
+  
+  
+  .nav-bar a{
+    text-decoration: none;
+    text-decoration-line: none;
+    color: rgb(117, 114, 114);
+  
+  }
+  
+  .nav-bar a:hover{
+  
+        color: black;
+        cursor: pointer;
+  }
+
+
+
+  .signup-box{
+    margin-top: 100px;
+    margin-left: 420px;
+    width:500px;
+    border-style: solid;
+    border-width: 0px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    background-color: rgb(255, 255, 255);
+  }
+
+
+
+  .signup-title{
+    font-size: 40px;
+    text-align: center;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    margin-top: 70px;
+    padding-top: 40px;
+  }
+
+
+
+
+
+.username , .password {
+    padding-top: 40px;
+    width: 100%;
+    text-align: center;
+ 
+
+
+}
+
+
+.username input, .password input{
+    line-height: 40px;
+    width: 80%;
+    font-size: 15px;
+}
+
+
+.submit input{
+    line-height: 30px;
+    background-color: black;
+    color: white;
+    width: 100px;
+    margin-top: 30px;
+    margin-left: 50px;
+    border-radius: 10px;
+    font-size: 20px;
+    cursor: pointer;
+    margin-bottom: 50px;
+
+}
+
+
+
+.submit input:hover{
+    opacity: 0.5;
+}

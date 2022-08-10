@@ -1,0 +1,113 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order detail</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/details.css' %}">
+{% load tem_tags %}
+</head>
+<body>
+
+
+
+
+    <div class="nav-bar">
+
+        <div class="title">
+            <a href="{% url 'index' %}">Simple-Store</a>
+        </div>
+        <div class="cart">
+            <a href="{% url 'cart' %}">Cart</a>
+        </div>
+        <div class="orders">
+            <a href="{% url 'orders' %}">Orders</a>
+        </div>
+        <div class="profile">
+           <a href="{% url 'logout' %}"> Logout</a>
+        </div>
+    </div>
+
+
+
+<div class="back">
+    <div class="go-back">
+       <a href="{% url 'orders' %}"> ⇦ Go back </a>
+    </div>
+
+        <div class="detail">
+        Order {{order.transactionID}} - {{order.date_ordered}}
+    </div>
+
+</div>
+    <div class="box">
+ 
+        <div class="inline">
+            <div class="product">
+                Product Name
+            </div>
+            <div class="description">
+                Description
+
+            </div>
+            <div class="price">
+                Price
+
+            </div>
+            <div class="quantity">
+                Quantity
+                
+            </div>
+            <div class="Total">
+                Total   
+
+            </div>
+        </div>
+
+        {% for item in orderitem %}
+        <div class="inline">
+            <div class="product">
+               {{item.product.title}}
+            </div>
+            <div class="description">
+                {{item.product.description}}
+
+
+            </div>
+            <div class="price">
+               ${{item.product.price}}
+               
+
+            </div>
+            <div class="quantity">
+                {{item.quantity}}
+                
+            </div>
+            <div class="Total">
+                $ {{item.quantity|total_price:item.product.price}}
+
+            </div>
+        </div>
+        {% endfor %}
+        
+        <hr>
+        <div class="inline">
+        <div class="product bigfont">
+            Total: 
+        </div>
+        <div class="all_total bigfont">
+            ${{order|all_total}}
+        </div>
+        </div>
+
+    </div>
+
+    
+</body>
+</html>

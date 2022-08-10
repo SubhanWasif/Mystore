@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/shipping.css' %}">
+{% load tem_tags %}
+</head>
+<body>
+
+
+    <div class="nav-bar">
+
+        <div class="title">
+            <a href="{% url 'index' %}">Simple-Store</a>
+        </div>
+        <div class="cart">
+            <a href="{% url 'cart' %}">Cart</a>
+        </div>
+        <div class="orders">
+            <a href="{% url 'orders' %}">Orders</a>
+        </div>
+        <div class="profile">
+           <a href="{% url logout' %}"> Logout</a>
+        </div>
+    </div>
+
+
+    <div class="go-back">
+        <a href="{% url 'cart' %}"> ⇦ Go back </a>
+     </div>
+    
+    <div class="shipping-box">
+        <div class="shipping-title">
+            Shipping 
+        </div>
+        <form method="post">
+            {% csrf_token %}
+        <div class="inline">
+            <div class="label">
+                First Name:
+            </div>
+            <div class="input">
+                {{form.first_name}}
+            </div>
+            <div class="label">
+                Last Name:
+            </div>
+            <div class="input">
+                {{form.last_name}}
+            </div>
+        </div>
+        <div class="inline">
+            <div class="label">
+                Phone Number:
+            </div>
+            <div class="input">
+                {{form.phone_number}}
+            </div>
+            <div class="label">
+                City:
+            </div>
+
+            <div class="input">
+                {{form.city}}
+            </div>
+        </div>
+        <div class="inline">
+            <div class="label">
+                State:
+            </div>
+            <div class="input">
+                {{form.state}}
+            </div>
+            <div class="label">
+                Zipcode:
+            </div>
+            <div class="input">
+                {{form.zipcode}}
+            </div>
+        </div>
+        <div class="label">
+            Address
+        </div>
+        <div class="input">
+            {{form.address}}
+        </div>
+        <input type="submit" name="submit" value=" Place Order">
+        </form>
+    </div>
+     
+
+<div class="total-box">
+    <div class="total">
+        
+        Total: ${{order|all_total}}<br>
+
+    </div>
+</div>
+
+
+
+
+
+
+    
+</body>
+</html>

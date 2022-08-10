@@ -1,0 +1,203 @@
+
+
+
+
+
+body{
+
+  margin: 0px;
+  padding: 0px;
+  background-color: rgba(99, 92, 194, 0.466);
+
+
+
+}
+
+.nav-bar{
+  background-color: rgba(206, 110, 110, 0.733);
+  color: rgb(117, 114, 114);
+  height: 70px;
+  width: 100%;
+  display: inline-flex;
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: 500;
+}
+
+.title{
+  font-size: 30px;
+  padding-top: 16px;
+  padding-left: 100px;
+}
+
+
+.cart{
+  font-size: 20px;
+  padding-top: 20px;
+  margin-left: 50%;
+  opacity: 1; 
+  
+
+}
+
+
+.orders , .profile{
+  font-size: 20px;
+  padding-top: 20px;
+  margin-left: 20px; 
+  opacity: 1; 
+
+}
+
+
+
+
+.category{
+
+  margin-top: 40px;
+  display: flex;
+  font-size: 20px;
+  margin-left: 80px;
+
+
+  
+}
+
+.category .all{
+  border-top-style: solid;
+  border-right-style: solid;
+  border-bottom-style: solid;
+  border-left-style: solid;
+  border-width: 0.5px;
+  padding: 20px;
+  width: 200px;
+  text-align: center;
+  cursor: pointer;
+
+
+
+}
+
+
+
+.category .diff-cate{
+  border-top-style: solid;
+  border-right-style: solid;
+  border-bottom-style: solid;
+  border-left-style: solid;
+  padding: 20px;
+  border-width: 0.5px;
+  width: 200px;
+  text-align: center;
+  cursor: pointer;
+  
+
+  
+
+
+
+}
+
+.category .sports{
+  border-top-style: solid;
+  border-right-style: solid;
+  border-bottom-style: solid;
+  border-left-style: solid;
+  padding: 20px;
+  border-width: 0.5px;
+  width: 200px;
+  text-align: center;
+  cursor: pointer;
+
+
+}
+
+
+
+
+.inline2{
+  display: inline-flex;
+  flex-wrap: wrap;
+  margin-left: 60px;
+}
+
+
+.products{
+  width: 250px;   
+  border-style: solid ;
+  border-width: 0.5px;
+  background-color: rgb(255, 255, 255);
+  margin: 20px;
+  padding: 10px;
+  padding-bottom: 10px;
+
+}
+
+
+
+
+
+.inline2 .products img{
+  width: 100%;
+  height: 300px;
+}
+
+
+.inline2 .products .pro-title{
+
+  font-size: 20px;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  margin-top: 20px;
+
+
+}
+
+.inline2 .products .pro-price{
+    margin-top: 10px;
+color: rgb(0, 223, 0);
+}
+
+.inline2 .products .add-to-cart{
+
+  border-style: solid;
+  border-radius: 20px;
+  border-width: 0.5px;
+  width: 150px;
+  height: 30px;
+  padding-top:10px ;
+  text-align: center;
+  margin-top: 10px;
+  transition: background-color 0.5s, color 0.5s; 
+}
+
+
+
+
+
+.inline2 .products .add-to-cart:hover{
+
+background-color: black;
+color: white;
+
+}
+
+
+input[type='submit']{
+  all: unset;
+  cursor: pointer;
+}
+
+
+.nav-bar a{
+  text-decoration: none;
+  text-decoration-line: none;
+  color: rgb(117, 114, 114);
+
+}
+
+.nav-bar a:hover{
+
+      color: black;
+      cursor: pointer;
+
+}
+
