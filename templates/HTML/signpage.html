@@ -41,6 +41,7 @@
         SIGN UP
     </div>
     <form method="post">
+        {% csrf_token %}
     <div class="username">
         <div class="input">
             {{form.username}}
